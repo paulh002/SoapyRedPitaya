@@ -250,7 +250,7 @@ public:
         ::ioctl(_sockets[1], FIONREAD, &size);
         #endif
 
-        /*if(size < total)
+        if(size < total)
         {
 			timeout.tv_sec = 100000 / 1000000;
 			timeout.tv_usec = 100000 % 1000000;
@@ -262,7 +262,7 @@ public:
             #else
             ::ioctl(_sockets[1], FIONREAD, &size);
             #endif
-        }*/
+        }
 		//if(size < total) return SOAPY_SDR_TIMEOUT;
 
         #if defined(_WIN32)
