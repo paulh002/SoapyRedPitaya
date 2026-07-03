@@ -252,17 +252,22 @@ public:
 
         if(size < total)
         {
-            timeout.tv_sec = timeoutUs / 1000000;
-            timeout.tv_usec = timeoutUs % 1000000;
+            //timeout.tv_sec = timeoutUs / 1000000;
+            //timeout.tv_usec = timeoutUs % 1000000;
+			timeout.tv_sec = 100000 / 1000000;
+			timeout.tv_usec = 100000 % 1000000;
 
-            ::select(0, 0, 0, 0, &timeout);
+			::select(0, 0, 0, 0, &timeout);
 
             #if defined(_WIN32)
             ::ioctlsocket(_sockets[1], FIONREAD, &size);
             #else
             ::ioctl(_sockets[1], FIONREAD, &size);
             #endif
+			SoapySDR_log(SOAPY_SDR_INFO, "SoapyRedpitaya::readStream overrun");
         }
+		if (size > total)
+			SoapySDR_log(SOAPY_SDR_INFO, "SoapyRedpitaya::readStream overrun");
 
         if(size < total) return SOAPY_SDR_TIMEOUT;
 
@@ -271,7 +276,7 @@ public:
         #else
         ::recv(_sockets[1], buffs[0], total, MSG_WAITALL);
         #endif
-		if (48000 == _rate[0])
+		/*if (48000 == _rate[0])
 			usleep(40000);
 		else if (96000 == _rate[0])
 			usleep(20000);
@@ -282,7 +287,7 @@ public:
 		else if (768000 == _rate[0])
 			usleep(2500);
 		else if (1536000 == _rate[0])
-			usleep(1250);
+			usleep(1250);*/
 		return (int)numElems;
     }
 
