@@ -274,15 +274,15 @@ public:
 		if (48000 == _rate[0])
 			usleep(40000);
 		else if (96000 == _rate[0])
-			usleep(40000);
+			usleep(20000);
 		else if (192000 == _rate[0])
-			usleep(40000);
+			usleep(10000);
 		else if (384000 == _rate[0])
-			usleep(40000);
+			usleep(5000);
 		else if (768000 == _rate[0])
-			usleep(40000);
+			usleep(2500);
 		else if (1536000 == _rate[0])
-			usleep(40000);
+			usleep(1250);
 		return (int)numElems;
     }
 
