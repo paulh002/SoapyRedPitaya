@@ -1,0 +1,61 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-DEBUG-6f99d5aba55a5fa66110.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "DEBUG",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SoapyRedPitaya",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "RedPitaya::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-RedPitaya-DEBUG-58d34be3397b50cd4205.json",
+					"name" : "RedPitaya",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/tmp/VisualGDB/c/Users/paulh/OneDrive/source/SoapyRedPitaya/build/VisualGDB/Debug",
+		"source" : "/tmp/VisualGDB/c/Users/paulh/OneDrive/source/SoapyRedPitaya"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
