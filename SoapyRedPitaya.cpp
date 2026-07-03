@@ -278,7 +278,7 @@ public:
 		else if (192000 == _rate[0])
 			usleep(10000);
 		else if (384000 == _rate[0])
-			usleep(5000);
+			usleep(2000);
 		else if (768000 == _rate[0])
 			usleep(2500);
 		else if (1536000 == _rate[0])
