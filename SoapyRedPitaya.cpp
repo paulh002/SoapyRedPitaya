@@ -264,7 +264,6 @@ public:
             #else
             ::ioctl(_sockets[1], FIONREAD, &size);
             #endif
-			SoapySDR_log(SOAPY_SDR_INFO, "SoapyRedpitaya::readStream overrun");
         }
 		if (size > total)
 			SoapySDR_log(SOAPY_SDR_INFO, "SoapyRedpitaya::readStream overrun");
@@ -276,18 +275,6 @@ public:
         #else
         ::recv(_sockets[1], buffs[0], total, MSG_WAITALL);
         #endif
-		/*if (48000 == _rate[0])
-			usleep(40000);
-		else if (96000 == _rate[0])
-			usleep(20000);
-		else if (192000 == _rate[0])
-			usleep(10000);
-		else if (384001 == _rate[0])
-			usleep(2000);
-		else if (768000 == _rate[0])
-			usleep(2500);
-		else if (1536000 == _rate[0])
-			usleep(1250);*/
 		return (int)numElems;
     }
 
