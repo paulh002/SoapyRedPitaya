@@ -265,9 +265,6 @@ public:
             ::ioctl(_sockets[1], FIONREAD, &size);
             #endif
         }
-		if (size > total)
-			SoapySDR_log(SOAPY_SDR_INFO, "SoapyRedpitaya::readStream overrun");
-
         if(size < total) return SOAPY_SDR_TIMEOUT;
 
         #if defined(_WIN32)
