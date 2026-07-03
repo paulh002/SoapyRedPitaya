@@ -263,17 +263,7 @@ public:
             ::ioctl(_sockets[1], FIONREAD, &size);
             #endif
         }*/
-		while (size < total)
-		{
-			usleep(500);
-#if defined(_WIN32)
-			::ioctlsocket(_sockets[1], FIONREAD, &size);
-#else
-			::ioctl(_sockets[1], FIONREAD, &size);
-#endif
-		}
-
-		if(size < total) return SOAPY_SDR_TIMEOUT;
+		//if(size < total) return SOAPY_SDR_TIMEOUT;
 
         #if defined(_WIN32)
         ::recv(_sockets[1], (char *)buffs[0], total, MSG_WAITALL);
