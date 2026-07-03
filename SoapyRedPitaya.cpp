@@ -277,7 +277,7 @@ public:
 			usleep(20000);
 		else if (192000 == _rate[0])
 			usleep(10000);
-		else if (384000 == _rate[0])
+		else if (384001 == _rate[0])
 			usleep(2000);
 		else if (768000 == _rate[0])
 			usleep(2500);
