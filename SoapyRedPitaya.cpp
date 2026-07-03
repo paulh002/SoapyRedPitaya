@@ -271,8 +271,19 @@ public:
         #else
         ::recv(_sockets[1], buffs[0], total, MSG_WAITALL);
         #endif
-
-        return (int)numElems;
+		if (48000 == _rate[0])
+			usleep(40000);
+		else if (96000 == _rate[0])
+			usleep(40000);
+		else if (192000 == _rate[0])
+			usleep(40000);
+		else if (384000 == _rate[0])
+			usleep(40000);
+		else if (768000 == _rate[0])
+			usleep(40000);
+		else if (1536000 == _rate[0])
+			usleep(40000);
+		return (int)numElems;
     }
 
     int writeStream(
